@@ -11,6 +11,8 @@
         <div id="container">
 
         </div>
+        <button onclick="Onclick()">Click</button>
+        <button id="myButton">Clicked</button>
         <script>
 
             // Change the content using id
@@ -32,6 +34,17 @@
         
         let container=document.getElementById('container')
         container.appendChild(newPara)
+         
+        // Add events
+        function Onclick(){
+            alert("Button Clicked")
+        }
+
+        // Add event listeners
+        const button=document.getElementById('myButton')
+        button.addEventListener('click',function(){
+            alert('Button 2 clicked')
+        })
         </script>
     </body>
     </html>
