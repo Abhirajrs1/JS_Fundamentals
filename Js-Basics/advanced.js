@@ -79,3 +79,74 @@ console.log(ans1);
 
 let find1=obj.find((value)=>value.name=='Alan')
 console.log(find1);
+
+
+// Currying
+
+function add(a){
+    return function(y){
+        return a+y
+    }
+}
+
+let add2=add(2)
+let result=add2(3)
+console.log(result);
+
+// Call
+
+let obj={
+    name:"Abhiraj",
+    age:25
+}
+let obj2={
+    name:"Alan",
+    age:20
+}
+function greet(){
+    return (`Hello ${this.name}`);
+}
+console.log(greet.call(obj));
+console.log(greet.call(obj2));
+
+
+let method2={
+    name:"Aromal",
+    age:30,
+    category:function(message){
+        return (`${message} ${this.name}`)
+    }
+}
+console.log(method2.category.call((method2),"Good Morning"));
+
+
+// Apply
+
+const a={
+    name:"Aravind",
+    age:26,
+    prev:function(message){
+        return `${message} ${this.name} how are you?`
+    }
+}
+console.log(a.prev.apply((a),['Good morning']));
+
+// Bind
+
+const b={
+    name:"Aravind",
+    age:26,
+    prev:function(message){
+        return `${message} ${this.name} how are you?`
+    }
+}
+let ans=b.prev.bind((b),'Good morning')
+console.log(ans());
+
+
+
+
+
+
+
+
